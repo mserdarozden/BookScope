@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --dark-color: #222126;
+    --grey-color: #C8C8C8;
+    --orange-color: #FF9800;
+    --white-color: #EEEEEE
+}
+
+main {
+    background-color: var(--grey-color);
+}
+
+h1 {
+    color: var(--dark-color);
+    margin-left: 1rem;
+    
+}
+
+h2 {
+    font-size: medium;
+}
+
+
+/* Formatting Hero Image */
+
+.hero {
+    position: relative;
+
+}
+
+picture {
+    background-color: var(--dark-color);
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+
+}
+
+.cta-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--dark-color);
+    color: #ffffff;
+    border: solid 2px var(--ornage-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* Formatting testimonials and about us containers */
+
+.testimonial-about-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: var(--white-color);
+    grid-gap: 1rem;
+    padding: 1rem;
+    
+}
+
+.about-us-container,
+.testimonials {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 1rem;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--dark-color);
+    font-size: small;
+    font-size: medium;
+    line-height: 1.5;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+    align-items: center;
+
+}
+
+.testimonial-card img {
+    width: 150px;
+    height: auto;
+    margin-right: 1rem;
+    padding: 0.5rem;
+}
+
+.testimonial-card h2,
+.about-us-container h2 {
+    font-size: large;
+}
+
+/* Formatting aircraft cards */
+
+.fleet {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+figure {
+    margin: 0;
+    padding: 1rem;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--dark-color);
+    background-color: var(--dark-grey-color);
+}
+
+figure div {
+    margin: 0;
+    padding: 0;
+}
+
+figcaption {
+    text-align: center;
+    padding-top: 0.2rem;
+    color: var(--white-color);
+    font-size: large;
+}
+
+.fleet img {
+    width: 100%;
+    height: auto;
+}
+

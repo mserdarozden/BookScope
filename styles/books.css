@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-color: #222126;
+    --grey-color: #C8C8C8;
+    --orange-color: #FF9800;
+    --white-color: #EEEEEE
+}
+
+.search-container {
+    background: var(--dark-color);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+select,
+input {
+    background-color: var(--grey-color);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    
+}
+
+.cards {
+    background-color: var(--grey-color);
+}

@@ -1,0 +1,213 @@
+body {
+    max-width: 1500px;
+    min-width: 400px;
+    margin: 0 auto;
+    font-family: "Roboto Serif", serif;
+    background-color: var(--dark-color);
+}
+
+:root {
+    --dark-color: #222126;
+    --grey-color: #C8C8C8;
+    --orange-color: #FF9800;
+    --white-color: #EEEEEE
+}
+
+header, footer {
+    background-color: var(--dark-color);
+}
+
+h1, h2, h3 {
+    font-family: "Merriweather Sans", serif;
+    
+}
+
+/* Formatting Header */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-color);
+    
+    padding: 0.5rem 2rem;
+    color: var(--white-color);
+
+}
+
+header p {
+    font-size: x-small;
+}
+
+.header-container-h {
+    display: flex;
+}
+
+.header-container-l {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: medium;
+    color: var(--white-color);
+}
+
+header a {
+    text-decoration: none;
+}
+
+header img {
+    width: 80px;
+    height: auto;
+    margin-right: 1rem;
+    background-color: var(--white-color);
+    border-radius: 1rem;
+}
+
+/* Formatting Navigation */
+
+#animatedNav {
+    background-color: var(--dark-color);
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-out;
+}
+
+#staticNav {
+    display: none;
+}
+
+nav ul {
+    overflow: hidden;
+}
+
+#animatedNav.open {
+    grid-template-rows: 1fr;
+}
+
+#hamButton {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    text-align: right;
+    padding: .25rem 2vw;
+}
+
+#hamButton::before {
+    content: "\2630";
+
+}
+
+ul.menuLinks li a {
+    display: block;
+    padding: .75rem 2vw;
+    color: #fff;
+    text-decoration: none;
+}
+
+.active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+ul.menuLinks {
+    display: block;
+    list-style-type: none;
+    /* affects large */
+    margin: 0;
+}
+
+#hamButton.open::before {
+    content: "x";
+}
+
+ul.menuLinks.open {
+    display: block;
+}
+
+
+
+/* Formatting footer */
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    background-color: var(--dark-color);
+    padding: 1rem 2rem;
+    align-items: center;
+    border-top: solid 1px black;
+}
+
+footer p {
+    margin: 0;
+    color: var(--white-color);
+    font-size: small;
+}
+
+.sociallinks {
+    display: flex;
+}
+
+.sociallinks img {
+    width: 40px;
+    height: auto;
+    padding-left: 10px;
+}
+
+/* Formatting book cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+.book-card {
+    color: var(--dark-color);
+    padding: 0.5rem;
+    text-align: center;
+    font-size: small;
+    list-style: none;
+}
+
+.book-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+.book-card img {
+    padding: 1rem;
+    object-fit: cover;
+    width: 200px;
+    height: auto;
+   
+}
+
+.boook-card p,
+.book-card h2 {
+    margin: .5rem;
+}
+
+/* Formatting orange button */
+
+.orange-button {
+    background-color: var(--orange-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.orange-button:hover {
+    background-color: #FE4C40;
+}

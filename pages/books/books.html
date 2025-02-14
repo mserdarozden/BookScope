@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Books - BookScope">
+    <meta property="og:description"
+        content="Find detailed information about a book, including the author, publisher, and a short summary.">
+    <meta property="og:type" content="book">
+    <meta property="og:url" content="https://mserdarozden.github.io/BookScope/books/books.html">
+    <meta property="og:image"
+        content="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=30&auto=format&w=600&h=400&fit=crop&dpr=2">
+
+
+    <title>BookScope - Discover Books & Authors</title>
+    <meta name="description"
+        content="Discover detailed information about a book, including the author, publisher, and a short summary.">
+    <meta name="author" content="Serdar Ozden">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../styles/normalize.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/global-large.css">
+
+    <link rel="stylesheet" href="../..//styles/books.css">
+    <link rel="stylesheet" href="../..//styles/books-large.css">
+    <link rel="icon" href="favicon.ico">
+
+    <script src="/scripts/headerFooter.js" type="module" defer></script>
+    <script src="/scripts/bookListing.js" type="module" defer></script>
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <nav id="animatedNav"></nav>
+
+    <main>
+        <div class="search-container">
+            <div class="row">
+                <select id="genre">
+                    <option value="fiction">Fiction</option>
+                    <option value="history">History</option>
+                    <option value="science">Science</option>
+                    <option value="fantasy">Fantasy</option>
+                </select>
+                <button class="orange-button" id="genreSearch">Search</button>
+            </div>
+            <div class="row">
+                <input type="text" id="bookQuery" placeholder="Enter book title or author">
+                <button class="orange-button" id="textSearch">Search</button>
+            </div>
+        </div>
+        <div class="cards" id="book-cards"></div>
+    </main>
+
+
+    <footer id="footer"></footer>
+</body>
+
+</html>

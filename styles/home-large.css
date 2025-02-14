@@ -1,0 +1,56 @@
+@media screen and (min-width: 600px) {
+    
+    .cta-button {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    #lastVisit {
+        top: 20px;
+        left: 20px;
+    }
+
+
+
+    /* Formatting testimonials and about us containers */
+
+    .testimonial-about-grid-container {
+        grid-template-columns: 60% 40%;
+    }
+
+    .testimonial-card {
+        flex-direction: row;
+
+    }
+
+    .about-us-container {
+        margin-right: 1rem;
+    }
+
+    /* Formatting fleet cards */
+
+    .fleet {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+    }
+
+    figure {
+        position: relative;
+        cursor: pointer;
+
+    }
+
+    figure div {
+        overflow: hidden;
+    }
+
+    .fleet img {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    figure:hover img {
+        transform: scale(1.1);
+    }
+
+
+}

@@ -1,0 +1,61 @@
+@media screen and (min-width: 600px) {
+
+    body {
+        min-width: 1000px;
+
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: x-large;
+    }
+
+    /* Formatting Navigation */
+
+    #hamButton {
+        display: none;
+    }
+
+    ul.menuLinks,
+    ul.menuLinks.open {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    ul.menuLinks a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 1rem;
+    }
+
+    #staticNav {
+        grid-template-rows: 1fr;
+    }
+
+    #staticNav {
+        display: grid;
+    }
+
+    #animatedNav {
+        display: none;
+    }
+
+    /* Formatting footer */
+    footer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sociallinks {
+        justify-content: center;
+    }
+
+    .footer-right-grid-container {
+        text-align: end;
+    }
+
+    /* Formatting cards */
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    }
+}
