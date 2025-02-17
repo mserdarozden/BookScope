@@ -40,7 +40,7 @@ export default class BookList {
       } else {
         const storedBookList = getLocalStorage("daily-books");
         if (storedBookList && storedBookList.length > 0) {
-          console.log(storedBookList);
+          //console.log(storedBookList);
           this.renderList(storedBookList);
         } else {
           console.warn("No stored books found. Fetching new data...");

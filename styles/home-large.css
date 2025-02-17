@@ -14,42 +14,13 @@
 
     /* Formatting testimonials and about us containers */
 
-    .testimonial-about-grid-container {
-        grid-template-columns: 60% 40%;
-    }
-
-    .testimonial-card {
+    .author-card {
         flex-direction: row;
 
     }
 
     .about-us-container {
         margin-right: 1rem;
-    }
-
-    /* Formatting fleet cards */
-
-    .fleet {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-
-    }
-
-    figure {
-        position: relative;
-        cursor: pointer;
-
-    }
-
-    figure div {
-        overflow: hidden;
-    }
-
-    .fleet img {
-        transition: transform 0.3s ease-in-out;
-    }
-
-    figure:hover img {
-        transform: scale(1.1);
     }
 
 
