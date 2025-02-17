@@ -42,6 +42,13 @@ export async function loadHeaderFooter(headerSRC, footerSRC, navSRC) {
     renderWithTemplate(navTemplate, navElement);
 }
 
+export async function loadModal() {
+    const modalTemplate = await loadTemplate("../../pages/partials/author-modal.html");
+    const modalElement = document.querySelector("#authorModal");
+
+    renderWithTemplate(modalTemplate, modalElement);
+}
+
 // retrieve data from localstorage
 export function getLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));

@@ -1,6 +1,5 @@
 export default class WikiServices {
-    constructor(query) {
-        this.query = query;
+    constructor() {
         this.famousAuthors = [
             "William Shakespeare", "Leo Tolstoy", "Jane Austen", "Mark Twain", "Charles Dickens",
             "Fyodor Dostoevsky", "George Orwell", "Virginia Woolf", "J.R.R. Tolkien", "Ernest Hemingway",
@@ -26,8 +25,8 @@ export default class WikiServices {
         ];
     }
 
-    async getData() {
-        const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(this.query)}`;
+    async getData(query) {
+        const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`;
     
         try {
             const response = await fetch(url);

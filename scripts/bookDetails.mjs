@@ -13,7 +13,7 @@ export default class BookDetails {
         //console.log("initializing");
         try {
             this.book = await this.dataSource.findBookById(this.bookId);
-            console.log(this.book);
+            //console.log(this.book);
 
             this.renderBookDetails(this.book);
             //this.addEventListeners();
@@ -22,7 +22,7 @@ export default class BookDetails {
         }
 
         this.checkForFavorite();
-        console.log(this.isFavorite);
+        //console.log(this.isFavorite);
         this.setFavButton();
         this.addEventListeners();
     }
@@ -31,7 +31,7 @@ export default class BookDetails {
         let favorites = getLocalStorage("favorites");
         
         if (Array.isArray(favorites)) {
-            console.log(favorites);
+            //console.log(favorites);
             this.isFavorite = favorites.some(book => book.id === this.book.id);
           } 
     }
@@ -52,7 +52,7 @@ export default class BookDetails {
           }
           setLocalStorage("favorites", favorites);
           
-          console.log(favorites);
+          //console.log(favorites);
     }
 
     removeBookFromFavorite() {
@@ -70,11 +70,11 @@ export default class BookDetails {
             setLocalStorage("favorites", favorites); // Save updated array
             this.isFavorite = false;
             this.favbutton.innerHTML = "Add to favorite";
-            console.log("Book removed:", this.book);
+            //console.log("Book removed:", this.book);
         } else {
             console.log("Book not found in favorites");
         }
-        console.log(favorites);
+        //console.log(favorites);
     }
 
     renderBookDetails(data) {
@@ -90,7 +90,7 @@ export default class BookDetails {
 
     addEventListeners() {
         this.favButton.addEventListener ("click", () => {
-            console.log("button clicked")
+            //console.log("button clicked")
             if (this.isFavorite) {
                 this.removeBookFromFavorite();
             } else {
