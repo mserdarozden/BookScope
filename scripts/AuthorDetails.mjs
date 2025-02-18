@@ -38,7 +38,6 @@ export default class AuthorDetails {
     
         this.authorName.addEventListener("click", () => {
             console.log("Author clicked");
-            this.authorElement.style.display = "flex";
             this.renderAuthorDetails();
 
         });
@@ -50,9 +49,11 @@ export default class AuthorDetails {
     }
 
     async renderAuthorDetails() {
+        
         const data = await this.dataSource.getData(this.authorName.textContent);
 
         if (data.title && data.extract) {
+            this.authorElement.style.display = "flex";
             document.getElementById("title").innerText = data.title;
             document.getElementById("summary").innerText = data.extract;
             document.getElementById("wikiLink").href = data.content_urls.desktop.page;
@@ -65,7 +66,7 @@ export default class AuthorDetails {
             }
 
         } else {
-            alert("No results found. Try another search.");
+            alert("No results found. Try another author.");
         }
         
 
