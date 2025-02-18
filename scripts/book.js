@@ -1,9 +1,9 @@
-import { getParams } from "./utils.mjs";
+import { getParams, loadModal } from "./utils.mjs";
 import GoogleServices from "./GoogleServices.mjs";
 import WikiServices from "./WikiServices.mjs";
 import BookDetails from "./bookDetails.mjs";
 import AuthorDetails from "./AuthorDetails.mjs";
-import { loadModal } from "./utils.mjs";
+
 
 const gDataSource = new GoogleServices();
 const bookId = getParams("book");
@@ -13,7 +13,6 @@ book.init();
 
 loadModal().then(() => {
     console.log("Modal loaded.");
-
 
     const authorElement = document.getElementById("authorModal");
     const authorName = document.getElementById("book-author");

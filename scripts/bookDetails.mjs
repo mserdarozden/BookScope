@@ -90,6 +90,10 @@ export default class BookDetails {
 
     addEventListeners() {
         this.favButton.addEventListener ("click", () => {
+            this.favButton.style.transform = "scale(0.9)";
+            setTimeout(() => {
+                this.favButton.style.transform = "scale(1)";
+            }, 150);
             //console.log("button clicked")
             if (this.isFavorite) {
                 this.removeBookFromFavorite();

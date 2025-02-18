@@ -188,7 +188,12 @@ footer p {
     object-fit: cover;
     width: 200px;
     height: auto;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
    
+}
+
+.book-card:hover img {
+    transform: scale(1.1); /* Slightly enlarge the image */
 }
 
 .boook-card p,
@@ -210,6 +215,10 @@ footer p {
 
 .orange-button:hover {
     background-color: #FE4C40;
+}
+
+.orange-button:active {
+    transform: scale(0.95); /* Slightly shrink on click */
 }
 
 /* Formatting Hero Image */
