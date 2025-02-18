@@ -23,45 +23,33 @@ h2 {
 }
 
 
-/* Formatting Hero Image */
-
-.hero {
-    position: relative;
-
-}
-
-picture {
-    background-color: var(--dark-color);
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-
-}
+/* Formatting CTA button */
 
 .cta-button {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    background-color: var(--dark-color);
-    color: #ffffff;
-    border: solid 2px var(--ornage-color);
-    padding: 10px 20px;
-    border-radius: 5px;
+    background-color: var(--orange-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     text-decoration: none;
-    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #FE4C40;
 }
 
 
-
-/* Formatting authors and about us containers */
+/* Formatting authors */
 
 .authors {
     background-color: var(--grey-color);
     color: black;
     padding: 1rem;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
     font-size: small;
     font-size: medium;
     line-height: 1.5;

@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --dark-color: #222126;
+    --grey-color: #C8C8C8;
+    --teal-color: #FF9800 ;
+    --white-color: #EEEEEE
+}
+
+.about-us-container {
+    background-color: white;
+    text-align: center;
+    padding: 1rem;
+    background-color:var(--grey-color);
+}

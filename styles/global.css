@@ -141,7 +141,6 @@ footer {
     background-color: var(--dark-color);
     padding: 1rem 2rem;
     align-items: center;
-    border-top: solid 1px black;
 }
 
 footer p {
@@ -175,6 +174,7 @@ footer p {
     text-align: center;
     font-size: small;
     list-style: none;
+    
 }
 
 .book-card a {
@@ -210,4 +210,21 @@ footer p {
 
 .orange-button:hover {
     background-color: #FE4C40;
+}
+
+/* Formatting Hero Image */
+
+.hero {
+    position: relative;
+
+}
+
+picture {
+    background-color: var(--grey-color);
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+
 }

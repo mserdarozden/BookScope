@@ -5,14 +5,7 @@
         right: 20px;
     }
 
-    #lastVisit {
-        top: 20px;
-        left: 20px;
-    }
-
-
-
-    /* Formatting testimonials and about us containers */
+    /* Formatting authors */
 
     .author-card {
         flex-direction: row;

@@ -2,9 +2,7 @@ import GoogleServices from "./GoogleServices.mjs";
 import WikiServices from "./WikiServices.mjs";
 import BookList from "./BookList.mjs";
 import AuthorList from "./AuthorList.mjs";
-import { loadModal } from "./utils.mjs";
 
-loadModal();
 
 const gDataSource = new GoogleServices();
 const gListElement = document.getElementById("book-cards");
