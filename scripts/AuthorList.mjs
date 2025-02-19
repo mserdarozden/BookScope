@@ -39,7 +39,7 @@ export default class AuthorList {
       } else {
         const storedAuthorList = getLocalStorage("daily-authors");
         if (storedAuthorList && storedAuthorList.length > 0) {
-          console.log(storedAuthorList);
+          //console.log(storedAuthorList);
           this.renderList(storedAuthorList);
         } else {
           console.warn("No stored authors found. Fetching new data...");

@@ -37,13 +37,13 @@ export default class AuthorDetails {
         }
     
         this.authorName.addEventListener("click", () => {
-            console.log("Author clicked");
+            //console.log("Author clicked");
             this.renderAuthorDetails();
 
         });
     
         this.closeButton.addEventListener("click", () => {
-            console.log("Close button clicked");
+            //console.log("Close button clicked");
             this.authorElement.style.display = "none";
         });
     }
