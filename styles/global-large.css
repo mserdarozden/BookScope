@@ -56,6 +56,15 @@
 
     .cards {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
+        font-size: x-large;
     }
+    
+    .book-card {
+        font-size: small;
+    }
+    
+    .book-card img {
+        width: 200px;  
+    }
+    
 }
