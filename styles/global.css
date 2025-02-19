@@ -220,8 +220,10 @@ footer p {
     background-color: #FE4C40;
 }
 
+
+
 .orange-button:active {
-    transform: scale(0.95); /* Slightly shrink on click */
+    transform: scale(0.95); 
 }
 
 /* Formatting Hero Image */
