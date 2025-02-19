@@ -8,7 +8,7 @@ export default class AuthorDetails {
     }
 
     async init() {
-        console.log("author initializing");
+        //console.log("author initializing");
 
         this.addEventListeners();
     }
@@ -16,7 +16,7 @@ export default class AuthorDetails {
     async logAuthor() {
         try {
             const author = await this.dataSource.getData(this.authorName.textContent);
-            console.log(author);
+            //console.log(author);
         } catch (error) {
             console.error("Error initializing author details:", error);
         }

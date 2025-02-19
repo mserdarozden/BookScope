@@ -12,13 +12,13 @@ const book = new BookDetails(bookId, gDataSource);
 book.init();
 
 loadModal().then(() => {
-    console.log("Modal loaded.");
+    //console.log("Modal loaded.");
 
     const authorElement = document.getElementById("authorModal");
     const authorName = document.getElementById("book-author");
     const closeButton = document.getElementById("closeButton");
 
-    console.log("Checking elements:", { authorElement, authorName, closeButton });
+    //console.log("Checking elements:", { authorElement, authorName, closeButton });
 
     if (!authorElement || !authorName || !closeButton) {
         console.error("One or more modal elements not found. Ensure loadModal() is correctly inserting them.");

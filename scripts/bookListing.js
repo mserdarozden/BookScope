@@ -20,14 +20,23 @@ genreSearchButton.addEventListener('click', () => {
 });
 
 const textSearchButton = document.getElementById("textSearch");
+const textBox = document.getElementById("bookQuery"); 
 
 textSearchButton.addEventListener('click', () => {
-    const text = document.getElementById("bookQuery").value.trim();
+    const text = textBox.value.trim();
+
     if (!text) {
         alert("Please enter a search term.");
         return;
     }
+
     const query = `${encodeURIComponent(text)}`;
     listBooks(query);
+    textBox.value = "";
 });
 
+textBox.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        textSearchButton.click();
+    }
+});
