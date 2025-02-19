@@ -2,79 +2,71 @@ import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 export default class BookDetails {
     constructor(bookId, dataSource) {
-        this.bookId = bookId;
-        this.book = {};
-        this.dataSource = dataSource;
-        this.isFavorite = false;
-        this.favButton = favButton;
+        this.bookId = bookId; // Unique identifier for the book
+        this.book = {}; // Object to store book details
+        this.dataSource = dataSource; // Data source for fetching book details
+        this.isFavorite = false; // Boolean to track if book is a favorite
+        this.favButton = document.getElementById("favButton"); // Reference to favorite button
     }
 
     async init() {
-        //console.log("initializing");
         try {
+            // Fetch book details using the provided data source
             this.book = await this.dataSource.findBookById(this.bookId);
-            //console.log(this.book);
-
-            this.renderBookDetails(this.book);
-            //this.addEventListeners();
+            this.renderBookDetails(this.book); // Render book details in the UI
         } catch (error) {
-            console.error("Error initializing product details:", error);
+            console.error("Error initializing book details:", error);
         }
 
+        // Check if the book is already a favorite
         this.checkForFavorite();
-        //console.log(this.isFavorite);
         this.setFavButton();
         this.addEventListeners();
     }
 
     checkForFavorite() {
         let favorites = getLocalStorage("favorites");
-        
+
         if (Array.isArray(favorites)) {
-            //console.log(favorites);
             this.isFavorite = favorites.some(book => book.id === this.book.id);
-          } 
+        }
     }
 
     addBookToFavorite() {
         this.checkForFavorite();
         let favorites = getLocalStorage("favorites");
 
-        if (Array.isArray(favorites) && (!this.isFavorite)) {
+        if (Array.isArray(favorites) && !this.isFavorite) {
             favorites.push(this.book);
             this.isFavorite = true;
-            this.favbutton.innerHTML = "Remove from favorite";
-          } else if (!Array.isArray(favorites)) {
-            favorites = []; 
-            favorites.push(this.book);
+            this.favButton.innerHTML = "Remove from favorite";
+        } else if (!Array.isArray(favorites)) {
+            favorites = [this.book];
             this.isFavorite = true;
-            this.favbutton.innerHTML = "Remove from favorite";
-          }
-          setLocalStorage("favorites", favorites);
-          
-          //console.log(favorites);
+            this.favButton.innerHTML = "Remove from favorite";
+        }
+
+        setLocalStorage("favorites", favorites);
     }
 
     removeBookFromFavorite() {
         let favorites = getLocalStorage("favorites");
-    
+
         if (!Array.isArray(favorites)) {
             favorites = [];
         }
-    
+
         // Find the index of the book by comparing IDs
         let index = favorites.findIndex(book => book.id === this.book.id);
-    
+
         if (index !== -1) {
             favorites.splice(index, 1); // Remove the book from the array
             setLocalStorage("favorites", favorites); // Save updated array
             this.isFavorite = false;
-            this.favbutton.innerHTML = "Add to favorite";
-            //console.log("Book removed:", this.book);
+            this.favButton.innerHTML = "Add to favorite";
         } else {
             console.log("Book not found in favorites");
         }
-        //console.log(favorites);
     }
 
     renderBookDetails(data) {
@@ -89,28 +81,27 @@ export default class BookDetails {
     }
 
     addEventListeners() {
-        this.favButton.addEventListener ("click", () => {
+        this.favButton.addEventListener("click", () => {
             this.favButton.style.transform = "scale(0.9)";
             setTimeout(() => {
                 this.favButton.style.transform = "scale(1)";
             }, 150);
-            //console.log("button clicked")
+
+            // Toggle favorite status
             if (this.isFavorite) {
                 this.removeBookFromFavorite();
             } else {
                 this.addBookToFavorite();
-            };
-            
+            }
         });
     }
 
     setFavButton() {
-        this.favbutton = document.getElementById("favButton");
+        this.favButton = document.getElementById("favButton");
         if (this.isFavorite) {
             this.favButton.innerHTML = "Remove from favorite";
         } else {
             this.favButton.innerHTML = "Add to favorite";
-        };
-
+        }
     }
 }

@@ -1,5 +1,6 @@
 export default class WikiServices {
     constructor() {
+        // List of famous authors to be used for fetching random author data
         this.famousAuthors = [
             "William Shakespeare", "Leo Tolstoy", "Jane Austen", "Mark Twain", "Charles Dickens",
             "Fyodor Dostoevsky", "George Orwell", "Virginia Woolf", "J.R.R. Tolkien", "Ernest Hemingway",
@@ -25,34 +26,36 @@ export default class WikiServices {
         ];
     }
 
+    // Fetch author data from Wikipedia API
     async getData(query) {
         const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`;
     
         try {
             const response = await fetch(url);
             const data = await response.json();
-            
-            return data;  // Now properly returning the fetched data
+            return data; // Return the fetched data
         } catch (error) {
-            console.error('Error fetching books:', error);
-            return null; // Return null or handle errors properly
+            console.error('Error fetching author data:', error);
+            return null; // Return null in case of an error
         }
     }
 
+    // Fetch random author data from the predefined list
     async getRandomData() {
+        // Select 4 random authors from the list
         const queries = this.famousAuthors.sort(() => 0.5 - Math.random()).slice(0, 4);
 
         try {
-            // Fetch all authors in parallel
+            // Fetch data for all selected authors in parallel
             const responses = await Promise.all(
                 queries.map(async (query) => {
                     const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`);
-                    if (!response.ok) return null; // Skip if response is not ok
+                    if (!response.ok) return null; // Skip if response is not successful
                     return response.json();
                 })
             );
 
-            // Filter out null responses
+            // Filter out unsuccessful responses
             const randomAuthors = responses.filter(author => author !== null);
             return randomAuthors;
 
