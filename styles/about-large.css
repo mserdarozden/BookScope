@@ -1,0 +1,8 @@
+@media screen and (min-width: 600px) {
+    .hero h1 {
+        font-size: 72px;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+    }
+}

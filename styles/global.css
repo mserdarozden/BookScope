@@ -166,6 +166,9 @@ footer p {
     grid-template-columns: 1fr;
     grid-gap: 1rem;
     padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: x-large;
 }
 
 .book-card {
